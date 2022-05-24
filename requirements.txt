@@ -1,0 +1,15 @@
+django==3.2.0
+djangorestframework==3.11.0 # Crear REST APIS con Django
+djangorestframework-simplejwt 
+psycopg2-binary 
+django-filter
+
+#djangorestframework-simplejwt==5.1.0
+#django==3.2.0
+#djangorestframework==3.9.0
+#psycopg2-binary==2.9.3
+#drf-yasg
+#django-filter
+#pytest==7.1.1
+#pytest-cov
+#pytest-django==3.7.0 
