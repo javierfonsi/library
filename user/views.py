@@ -4,7 +4,6 @@ from rest_framework import viewsets
 # Create your views here.
 from .serializers import UserSerializer
 from .models import User
-from author.models import Author
 from .permissions import IsOwnerOrReadOnly
 from rest_framework.permissions import AllowAny #, IsAuthenticated,
 from rest_framework.decorators import action
@@ -41,7 +40,11 @@ class UserViewSet(viewsets.ModelViewSet):
         serializer = BookSerializer(queryset, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
    
-
+    @action(detail=True)
+    def my_rack(self, request,  pk=None):
+        queryset = Book.objects.filter(rack__id=pk)
+        serializer = BookSerializer(queryset, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
 
     # @action(detail=True)
     # def my_cars(self, request,  pk=None):

@@ -1,7 +1,11 @@
 from django.db import models
 from author.models import Author
 from user.models import User
+from rack.models import RackNum
+# from place.models import Rack
 # Create your models here.
+
+
 class Book(models.Model):
 
     BOOKS_CHOICES = [
@@ -21,6 +25,7 @@ class Book(models.Model):
     publisher = models.CharField(max_length=200, blank=False, null=False, default="")
     language = models.CharField(max_length=200, blank=False, null=False)
     format = models.CharField(choices=FORMAT_CHOICES, max_length=100, blank=True, null=True)
+    rack = models.ForeignKey(RackNum, on_delete=models.CASCADE, blank=False, null=False)
 
     def __str__(self):
         return f"{self.isbn} | {self.title} | {self.author.name}" 
