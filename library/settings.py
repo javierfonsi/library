@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'book',
     'rest_framework',
     'author',
+    'rack',
 ]
 
 MIDDLEWARE = [
@@ -81,7 +82,7 @@ WSGI_APPLICATION = 'library.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'django',
+        'NAME': 'dbbiblio',
         'USER': 'postgres',
         'PASSWORD': '1234',
         'HOST': 'localhost',
