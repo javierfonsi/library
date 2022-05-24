@@ -37,7 +37,7 @@ class Rack(models.Model):
 class RackItem(models.Model):
     rack = models.ForeignKey(Rack, on_delete=models.CASCADE)
     book = models.ForeignKey(Book, on_delete=models.CASCADE)
- 
+    
 
     def __str__(self):
         return f"{self.id} | {self.book.title} | {self.book.author.name} "
