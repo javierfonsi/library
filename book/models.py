@@ -17,7 +17,7 @@ class Book(models.Model):
     subject = models.CharField(max_length=200, blank=False, null=False, default="")
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
     book = models.CharField(choices=BOOKS_CHOICES, max_length=200, default="")
-    isbn= models.CharField(max_length=10, primary_key=True, default="")
+    isbn= models.CharField(max_length=10, blank=False, null=False, default="")
     publisher = models.CharField(max_length=200, blank=False, null=False, default="")
     language = models.CharField(max_length=200, blank=False, null=False)
     format = models.CharField(choices=FORMAT_CHOICES, max_length=100, blank=True, null=True)

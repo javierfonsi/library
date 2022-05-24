@@ -23,3 +23,23 @@ class UserSerializer(serializers.ModelSerializer):
         user.set_password(validated_data["password"])
         user.save()
         return user 
+    
+#from rest_framework import serializers
+#from .models import RackItem, Rack
+#from book.serializers import BookSerializer
+
+
+#class RackItemSerializer(serializers.ModelSerializer):
+#    book = VehicleUserSerializer()
+#    class Meta:
+#        model = RackItem
+#        fields = "__all__"
+#        depth = 1
+
+
+#class RackSerializer(serializers.ModelSerializer):
+
+#    class Meta:
+#        model = Rack
+#        fields = "__all__"
+#        depth = 1 

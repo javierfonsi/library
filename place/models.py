@@ -40,7 +40,7 @@ class RackItem(models.Model):
  
 
     def __str__(self):
-        return f"{self.id} | {self.book.isbn} | {self.book.author.name} "
+        return f"{self.id} | {self.book.title} | {self.book.author.name} "
 
 @receiver(post_save, sender=RackItem)
 def update_status_rack(sender, instance, created, **kwargs):

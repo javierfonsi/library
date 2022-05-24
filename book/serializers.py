@@ -4,7 +4,8 @@ from user.serializers import UserSerializer
 
 class BookSerializer(serializers.ModelSerializer):
     book = serializers.CharField(source="get_book_display")
-    format = serializers.CharField(source="get_book_display")
+    format = serializers.CharField(source="get_format_display")
+    owner = UserSerializer()
     class Meta:
         model = Book
         fields = '__all__'
