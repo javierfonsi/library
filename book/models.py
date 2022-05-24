@@ -1,7 +1,7 @@
 from django.db import models
 from author.models import Author
 from user.models import User
-from rack.models import RackNum
+#from rack.models import RackNum
 # from place.models import Rack
 # Create your models here.
 
