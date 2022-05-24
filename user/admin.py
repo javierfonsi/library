@@ -3,5 +3,10 @@ from .models import User
 #, CustomUserManager
 # Register your models here.
 
-admin.site.register(User) 
-#admin.site.register(CustomUserManager) 
+class ListUser(admin.ModelAdmin):
+    search_fields = ['email']
+
+#admin.site.register(User) 
+admin.site.register(User, ListUser) 
+
+

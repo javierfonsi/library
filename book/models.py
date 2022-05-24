@@ -21,6 +21,7 @@ class Book(models.Model):
     publisher = models.CharField(max_length=200, blank=False, null=False, default="")
     language = models.CharField(max_length=200, blank=False, null=False)
     format = models.CharField(choices=FORMAT_CHOICES, max_length=100, blank=True, null=True)
+    rack_item = models.IntegerField(blank=False, null=False)
 
     def __str__(self):
         return f"{self.isbn} | {self.title} | {self.author.name}" 
