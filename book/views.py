@@ -4,7 +4,7 @@ from .models import Book
 from .serializers import BookSerializer
 from .permissions import IsOwnerOrReadOnlyBook
 from rest_framework.permissions import  IsAdminUser
-#from django_filters.rest_framework import DjangoFilterBackend
+from django_filters.rest_framework import DjangoFilterBackend
 #from rest_framework import filters 
 
 
@@ -20,7 +20,8 @@ class BookViewset(viewsets.ModelViewSet):
     ##         queryset = queryset.filter(color=color)
     ##     return queryset
     #filter_backends = [DjangoFilterBackend,filters.SearchFilter]
-    #filterset_fields = ['title', 'isbn']
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = ['rack_item', 'title', 'subject', 'isbn']
     #search_fields = ['title']
 
     def get_permissions(self):
